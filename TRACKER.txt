@@ -1,0 +1,5 @@
+# Course Content Build Tracker
+
+This is a placeholder for the TRACKER.xlsx file.
+
+Use this to track the build progress of course content.
