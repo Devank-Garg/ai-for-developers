@@ -54,3 +54,23 @@ Stanford's deep learning for vision course notes. The section on neural network 
 https://github.com/karpathy/micrograd
 https://www.youtube.com/watch?v=VMj-3S1tku0 (video walkthrough)
 Building a working neural network and backpropagation engine from scratch. The most valuable exercise for understanding what a neural network actually is at the computational level.
+
+---
+
+## Going deeper
+
+**"Deep Learning" textbook — Goodfellow, Bengio, Courville (free online)**
+https://www.deeplearningbook.org/
+The canonical academic reference on deep learning. Chapters 6 (deep feedforward networks), 7 (regularisation), and 8 (optimisation) are directly relevant to this module. Dense but authoritative — useful as a reference when you encounter unfamiliar terms.
+
+**"A Recipe for Training Neural Networks" — Andrej Karpathy**
+https://karpathy.github.io/2019/04/25/recipe/
+A practitioner's guide to the actual process of training neural networks — debugging, diagnosing failures, iterating. Opinionated and practical. The perspective of someone who has trained a lot of models.
+
+**Distill.pub — "A Gentle Introduction to Graph Neural Networks"**
+https://distill.pub/2021/gnn-intro/
+Distill's interactive articles set the standard for ML visualisation. This one is on GNNs (not required), but the visual format is worth experiencing — bookmark Distill.pub as a general-purpose resource for understanding neural network concepts.
+
+**"Yes you should understand backprop" — Andrej Karpathy**
+https://karpathy.medium.com/yes-you-should-understand-backprop-e2f06eab496b
+A short argument for why understanding backpropagation — not just the forward pass — matters for practitioners. Useful context before moving into training and optimisation in Phase 2.

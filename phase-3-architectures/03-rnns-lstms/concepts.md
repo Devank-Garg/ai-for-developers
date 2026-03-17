@@ -4,6 +4,16 @@
 
 ---
 
+## Why a developer needs this
+
+You will almost certainly not build or run an RNN. But reading this module gives you two things:
+
+**1. The "why" behind Transformers.** The Transformer's key design choices — attention, parallel processing, no hidden state — only make full sense when you understand what problems they solve. RNNs are those problems. If you skip this module you can still use a Transformer, but you won't understand why it's designed the way it is.
+
+**2. Vocabulary that reappears.** Autoregressive generation, hidden state, sequence-to-sequence, encoder-decoder — this vocabulary originates with RNNs and carries directly into how LLMs work. LLMs generate tokens one at a time (autoregressive), just like RNNs did. The difference is in the mechanism, not the high-level concept.
+
+---
+
 ## The sequential data problem
 
 A fully connected network processes each input independently. A sentence is not a bag of independent features — the meaning of a word depends on what came before it. "The bank was steep" and "The bank was solvent" share the same words but mean entirely different things based on context.
@@ -60,6 +70,22 @@ RNNs and LSTMs have two fundamental limitations:
 2. **Information bottleneck** — the entire history must be compressed into a fixed-size hidden state. Long-range information still gets lost for very long sequences.
 
 Transformers solve both: they attend directly to every position in the sequence simultaneously (no sequential bottleneck), and their attention mechanism can explicitly look back at any earlier position (no information compression). The tradeoff is quadratic memory cost with sequence length — addressed by newer efficient attention variants.
+
+---
+
+## What this means when you're building
+
+RNNs are not something you'll call or deploy today, but the concepts have direct parallels in how you think about LLMs:
+
+| RNN concept | LLM equivalent |
+|-------------|---------------|
+| Hidden state | The model's internal representation, updated at each token (but via attention, not recurrence) |
+| Autoregressive generation | Identical — LLMs also generate one token at a time, each conditioned on previous tokens |
+| Sequence-to-sequence | Still used for translation, summarisation — modern LLMs are encoder-decoder or decoder-only Transformers doing the same task |
+| Context bottleneck | The context window is the LLM equivalent — a hard limit on how much history can be considered |
+| Forgetting long-range context | LLMs have this problem too at very long contexts, for different reasons |
+
+The transition from RNNs to Transformers is the most important architectural shift in the history of modern AI. Understanding both makes you a more effective builder of LLM systems.
 
 ---
 

@@ -63,3 +63,23 @@ Explores one of the most interesting emergent behaviours in Transformers — the
 **Transformer Circuits Thread — Anthropic**
 https://transformer-circuits.pub/
 A series of papers and essays on understanding *how* Transformers compute internally. Relevant from Phase 4 onward. Start with "A Mathematical Framework for Transformer Circuits" if curious about the mechanistic perspective.
+
+---
+
+## Going deeper
+
+**"Scaling Laws for Neural Language Models" — Kaplan et al., OpenAI (2020)**
+https://arxiv.org/abs/2001.08361
+The paper that established predictable power-law relationships between model size, data, compute, and loss. Understanding scaling laws is foundational for Phase 4 (training at scale). The abstract and figures tell the story clearly.
+
+**"Training Compute-Optimal Large Language Models" — Hoffmann et al. (Chinchilla, 2022)**
+https://arxiv.org/abs/2203.15556
+The "Chinchilla" paper — revised the scaling law recipe and showed that most large models at the time were undertrained (too large for their data budget). Profoundly influenced how all subsequent LLMs are trained. One of the most practically impactful papers in the field.
+
+**"RoFormer: Enhanced Transformer with Rotary Position Embedding" — Su et al. (2021)**
+https://arxiv.org/abs/2104.09864
+Introduces RoPE (Rotary Position Embedding), which is now the dominant positional encoding scheme in modern LLMs (LLaMA, Mistral, Gemma, and others). If you want to understand why modern models handle position differently from the original sinusoidal scheme, this is the source.
+
+**"LLM Visualization" — Brendan Bycroft**
+https://bbycroft.net/llm
+An interactive 3D visualisation of a small GPT running a forward pass in real time. Shows every matrix multiplication, attention head, and layer. Exceptional for making the abstract Transformer architecture concrete and spatial.

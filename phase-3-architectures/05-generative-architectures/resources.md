@@ -62,3 +62,31 @@ The DALL-E 2 paper, which uses CLIP embeddings to condition image generation. Sh
 **Distill.pub — Generative Models**
 https://distill.pub/
 Several Distill articles cover generative models with interactive visualisations. Search for "GAN", "VAE", or "diffusion" — the quality bar is exceptionally high. Particularly: "Feature Visualization" and "Activation Atlas" for understanding what generative models have learned.
+
+---
+
+## Going deeper
+
+**"Denoising Diffusion Probabilistic Models" — Ho et al. (DDPM, 2020)**
+https://arxiv.org/abs/2006.11239
+The paper that established the modern diffusion model formulation. DDPM is the foundation that Stable Diffusion, DALL-E 3, and Imagen are built on. Introduction and Figure 2 are accessible; the math in sections 3–4 is dense but well-motivated.
+
+**"Classifier-Free Diffusion Guidance" — Ho & Salimans (2022)**
+https://arxiv.org/abs/2207.12598
+Short paper (4 pages) that introduced classifier-free guidance — the mechanism behind the `guidance_scale` parameter in every image generation API. Explains why and how text prompts guide the denoising process. Very practical for understanding text-to-image generation behaviour.
+
+**"Stable Diffusion — How It Works" — Jay Alammar**
+https://jalammar.github.io/illustrated-stable-diffusion/
+Jay Alammar's illustrated walkthrough of the full Stable Diffusion pipeline: CLIP text encoder → latent diffusion → VAE decoder. Ties together every concept from this module in the context of a real production system. Recommended reading before Phase 4 / 06 (Multimodality).
+
+**"Generative Adversarial Networks — NIPS 2016 Tutorial" — Ian Goodfellow**
+https://arxiv.org/abs/1701.00160
+Goodfellow's own tutorial on GANs, written for a broad ML audience. Covers the theory, training challenges, and evaluation metrics clearly. More thorough than the original 2014 paper — this is the better starting point for understanding GANs in depth.
+
+**"Score-Based Generative Modeling through Stochastic Differential Equations" — Song et al. (2020)**
+https://arxiv.org/abs/2011.13456
+The unified SDE framework for diffusion models — the theoretical foundation that explains DDPM, DDIM, and score matching as special cases of the same process. Heavy on mathematics, but the introduction and conceptual sections are accessible. For those who want the full picture.
+
+**Hugging Face Diffusers library documentation**
+https://huggingface.co/docs/diffusers/
+The practical entry point for running diffusion models in code. The conceptual guides cover pipelines, schedulers, and conditioning clearly. Useful reference if you're working with image generation APIs or self-hosted diffusion models.

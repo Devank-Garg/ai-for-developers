@@ -51,3 +51,23 @@ Introduced the encoder-decoder architecture using LSTMs that became standard for
 **min-char-rnn.py (GitHub gist)**
 https://gist.github.com/karpathy/d4dee566867f8291f086
 A complete character-level RNN language model in ~100 lines of Python. The simplest possible working implementation of autoregressive text generation. Run it on any text file. Understanding this code directly prepares you for understanding GPT-style generation in Phase 4.
+
+---
+
+## Going deeper
+
+**"Attention and Augmented Recurrent Neural Networks" — Olah & Carter, Distill (2016)**
+https://distill.pub/2016/augmented-rnns/
+Written just before Transformers arrived, this Distill article explores how attention was being added to RNNs to address their limitations. A fascinating historical snapshot of the problem that Transformers would solve — and the conceptual bridge between RNNs and the attention mechanism.
+
+**"The Illustrated Seq2Seq with Attention" — Jay Alammar**
+https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
+Jay Alammar's visual walkthrough of sequence-to-sequence models with attention — the direct architectural predecessor to the Transformer. Shows the encoder-decoder pattern and attention mechanism as they appeared in RNN-based machine translation. Read this before "The Illustrated Transformer" for maximum clarity.
+
+**"Recurrent Neural Networks cheatsheet" — Stanford CS230**
+https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks
+Stanford's CS230 RNN reference sheet. Covers vanilla RNN, LSTM, GRU, and bidirectional RNNs in one structured document. A good quick reference when you encounter RNN-related terms in papers or documentation.
+
+**"GRU (Gated Recurrent Unit)" — Cho et al. (2014)**
+https://arxiv.org/abs/1406.1078
+Introduced the GRU — a simplified LSTM with two gates instead of three. GRUs are often used in practice because they are faster to train with comparable performance. Worth knowing exists if you encounter GRU references in model documentation.

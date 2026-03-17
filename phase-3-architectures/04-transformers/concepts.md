@@ -4,6 +4,21 @@
 
 ---
 
+## Why a developer needs this
+
+Every model you call via a language API — Claude, GPT-4, Gemini, Llama — is a decoder-only Transformer. Understanding this architecture is not optional background knowledge; it directly determines how you reason about:
+
+- Why context windows exist and are hard to extend
+- Why longer outputs cost more than shorter ones
+- Why the model can attend to your entire prompt at once but generates one token at a time
+- What a "layer" is when a model card says "32-layer decoder" or when a tool references layer activations
+- Why inference latency scales with output length, not input length
+- What the KV cache is and why it matters for production cost
+
+This is the most important module in Phase 3. Invest the time here.
+
+---
+
 ## The key insight
 
 Transformers, introduced in the 2017 paper "Attention Is All You Need," solved the two core problems with RNNs:
@@ -94,6 +109,18 @@ For LLMs, **decoder-only** is now dominant.
 - **Direct long-range connections** — any token can attend to any other in one step, no matter the distance
 - **Scale** — Transformer performance scales predictably with parameters and data (see Phase 4)
 - **Versatility** — the same architecture handles text, code, images (Vision Transformers), audio, and more
+
+---
+
+## What this means when you're building
+
+**Context window cost**: attention scores are computed between every pair of tokens. The cost scales quadratically with sequence length. This is the fundamental reason long-context models are expensive — doubling the context length roughly quadruples the attention computation. API pricing reflects this.
+
+**KV cache**: during generation, the model has already computed Key and Value vectors for all tokens in the prompt. It would be wasteful to recompute them for every new token generated. The **KV cache** stores these vectors and reuses them — one of the most important optimisations in production inference. When you see "cache tokens" or "prompt caching" in API pricing, this is what's being cached.
+
+**Latency scales with output, not input**: because the model processes your entire prompt in parallel but generates output tokens one at a time (each requiring a separate forward pass), a short prompt with a long response is slower than a long prompt with a short response. This matters when designing for latency.
+
+**Decoder-only is the LLM standard**: every major LLM today — Claude, GPT-4, Gemini, Llama, Mistral — is a decoder-only Transformer. The encoder-decoder architecture (used in T5, BART) is less common for general-purpose language models but still appears in specialised translation and summarisation models.
 
 ---
 

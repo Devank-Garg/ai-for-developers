@@ -1,5 +1,15 @@
 # Concepts: Neural Network Basics
 
+> **Tag: core** — You don't need to build neural networks. You need to understand what they are well enough to read model documentation, interpret API behaviour, and make sense of everything in Phases 4 and 5.
+
+---
+
+## Why a developer needs this
+
+Every model you call via API — whether it classifies images, generates text, or produces embeddings — is a neural network. Model cards describe layer counts, hidden dimensions, and architecture types. API docs refer to embedding sizes and output shapes. Fine-tuning guides talk about freezing layers.
+
+You don't need to implement any of this. But you do need the vocabulary and the mental model. Without it, you're reading documentation in a language you don't quite speak.
+
 ---
 
 ## What a neural network is
@@ -63,6 +73,18 @@ The final layer produces the prediction. This is just matrix multiplication and 
 A shallow network (one hidden layer) can theoretically approximate any function, but it may need an exponentially large number of neurons. Deep networks — many layers — learn **hierarchical representations**: early layers learn simple features (edges, n-grams), deeper layers combine them into complex concepts (faces, sentences).
 
 This hierarchical feature learning is why deep networks are powerful and why adding depth often improves performance up to a point.
+
+---
+
+## What this means when you're building
+
+**Reading model cards**: when a model card says "12-layer encoder with 768 hidden dimensions," that means 12 stacked Transformer blocks (covered in module 04), each of which is a neural network in this sense. The number of hidden dimensions is the size of each layer's output vector.
+
+**Embedding dimensions**: when an embedding API returns a vector of 1,536 numbers, that's the output of the final (or a specific) layer of the network. The size is a fixed architectural choice — it's the "hidden dimension" of that layer.
+
+**Parameter counts**: "7B parameters" means 7 billion individual weight values across all layers of the network. More parameters = more capacity to learn = more compute required to run.
+
+**Fine-tuning**: when you fine-tune a model, you are resuming the training process on some or all layers — adjusting weights that were previously fixed. Freezing a layer means keeping its weights unchanged during training.
 
 ---
 

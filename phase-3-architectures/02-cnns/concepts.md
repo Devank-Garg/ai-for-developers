@@ -4,6 +4,19 @@
 
 ---
 
+## Why a developer needs this
+
+When you call an image classification API, a vision model, or any service that processes images, a CNN (or more recently, a Vision Transformer — a CNN-inspired architecture) is running underneath. Understanding CNNs tells you:
+
+- Why image models generalise well across different positions and scales
+- Why transfer learning from a pre-trained image model is so powerful
+- Why the first layers of any vision system detect edges before it detects objects
+- How the Vision Transformer (ViT) — used in modern multimodal LLMs — relates to CNNs
+
+If you work with image input at all in Phase 5 or Phase 6, this module is worth the time.
+
+---
+
 ## The problem with flat networks for images
 
 A 224×224 pixel colour image has 224 × 224 × 3 = **150,528 values**. A fully connected hidden layer with 1,000 neurons would need 150 million weight parameters — just for the first layer. This is computationally expensive, prone to overfitting, and ignores a key property of images: nearby pixels are related.
@@ -61,6 +74,16 @@ CNNs established several ideas that carry forward to Transformers and LLMs:
 - **Hierarchical representation learning** — building complex concepts from simple ones
 - **The value of architectural inductive biases** — baking assumptions about structure (spatial locality) into the architecture reduces what needs to be learned from data
 - **Transfer learning** — large CNNs trained on ImageNet are routinely fine-tuned for new tasks, a pattern LLMs repeat at vastly larger scale
+
+---
+
+## What this means when you're building
+
+**Transfer learning in practice**: most production image models are not trained from scratch. You take a large CNN (e.g., ResNet, EfficientNet) pre-trained on ImageNet, strip the final classification layer, and replace it with a new one trained on your data. The convolutional layers — which learned to detect edges, textures, and shapes — transfer directly. This is exactly the same pattern LLMs use at vastly larger scale (Phase 4).
+
+**Image embedding APIs**: services that turn an image into a vector (for search, recommendation, or classification) are running an image through a CNN or Vision Transformer and returning the output of a specific layer before the final classifier. The vector *is* the feature representation the CNN learned.
+
+**Vision Transformers (ViT)**: modern multimodal LLMs (including those that accept image inputs) often use a Vision Transformer rather than a CNN. ViT splits an image into fixed-size patches, treats each patch as a token, and runs it through a Transformer. The inductive biases are different but the output — a rich spatial representation — serves the same purpose.
 
 ---
 

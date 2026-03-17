@@ -50,3 +50,23 @@ Lesson 1 trains an image classifier from scratch and covers CNNs conceptually be
 **PyTorch — `torch.nn.Conv2d` documentation**
 https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html
 Reference for the standard 2D convolution layer. Useful when implementing CNNs or reading model architectures.
+
+---
+
+## Going deeper
+
+**"An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" — Dosovitskiy et al. (2020)**
+https://arxiv.org/abs/2010.11929
+The Vision Transformer (ViT) paper — applying a Transformer directly to image patches instead of using convolutions. Now the backbone of many multimodal LLMs. Abstract and Figure 1 are sufficient to understand the concept; the full paper is readable.
+
+**"EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks" — Tan & Le (2019)**
+https://arxiv.org/abs/1905.11946
+EfficientNet is one of the most widely used CNN backbones in production. The paper introduces compound scaling — a principled way to scale depth, width, and resolution simultaneously. Worth understanding if you're working with vision models in production.
+
+**"Feature Visualization" — Olah et al., Distill (2017)**
+https://distill.pub/2017/feature-visualization/
+An interactive deep-dive into what neurons in CNNs actually respond to — from edges at early layers to complex textures and objects in deep layers. Visually stunning and builds genuine intuition for hierarchical representation learning.
+
+**Torchvision pre-trained models — PyTorch**
+https://pytorch.org/vision/stable/models.html
+The full list of available pre-trained CNN and Vision Transformer models in PyTorch. Useful reference when choosing a backbone for a vision task or when reading about model architectures.
