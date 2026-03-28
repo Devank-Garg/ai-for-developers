@@ -14,13 +14,13 @@ f(tokens_in) → probability_distribution_over_next_token
 
 That's the whole thing. Everything else — the chat interface, the reasoning, the code generation — is built on top of that single operation: given a sequence of tokens, predict the probability of every possible next token.
 
-What makes it useful isn't the function form; it's what was done to define that function. A language model with billions of parameters, trained on hundreds of billions of tokens of text, develops a representation of language — and, incidentally, of much of what language talks about — that turns out to be remarkably general.
+What makes it useful isn't the function form; it's what was done to define that function. A language model with billions of parameters, trained on hundreds of billions of tokens of text, develops a representation of language — and, incidentally, of much of what language talks about — that turns out to be remarkably general.  
 
 When you call an LLM API, you are calling this function repeatedly. The model doesn't "think" in any human sense. It doesn't plan ahead or look anything up. It runs a forward pass through a very large neural network and produces a probability distribution. Your application then samples a token from that distribution, appends it to the input, and calls the function again.
 
 > You might think the model reads your message and then writes a response. Actually, the model reads your message and the response *one token at a time*, each token produced by a separate call to the same function.
 
----
+----
 
 ## Next-token prediction
 
