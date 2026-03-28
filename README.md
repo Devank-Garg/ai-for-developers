@@ -182,13 +182,7 @@ This is a community course. Contributions are welcome and encouraged.
 
 ---
 
-## 📋 Build Tracker
 
-`TRACKER.xlsx` contains the full content plan with status for every topic across all phases. If you're a contributor looking for what to work on, open the tracker and filter by `Status = Not Started` and `Priority = High`.
-
-Columns tracked: Level · Tag · Content Type · Status · Priority · Est. Hours · Actual Hours · % Done · Assigned To · Target Date · Notes
-
----
 
 ## 📚 Recommended Pre-Reading
 
