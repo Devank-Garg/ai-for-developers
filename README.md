@@ -13,10 +13,10 @@
 
 This course is built for **software developers, IT leads, and technical professionals** who:
 
-- Know how to write code but are new to AI
-- Want to build real AI-powered applications — chatbots, RAG systems, agents
-- Don't want to become an ML researcher, but need solid conceptual foundations
-- Are tired of "Hello World" AI tutorials that don't prepare them for production
+- Know how to write code but are new to AI.
+- Want to build real AI-powered applications — chatbots, RAG systems, agents.
+- Don't want to become an ML researcher, but need solid conceptual foundations.
+- Are tired of "Hello World" AI tutorials that don't prepare them for production.
 
 **It is not** a math course. It is not a framework tutorial. Every concept is taught provider-agnostically — the principles work whether you're using Claude, GPT-4, Gemini, Llama, or a model that doesn't exist yet.
 
