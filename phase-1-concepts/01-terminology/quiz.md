@@ -48,9 +48,6 @@ d) 1,000
 
 ---
 
-**9.** What is the difference between pre-training and fine-tuning?
-
----
 
 **10.** You have a dataset of 10,000 labelled images. You use 7,000 to train your model, 1,500 to monitor training progress, and hold 1,500 back entirely until your final evaluation. What are the standard names for each of these three splits?
 
@@ -92,9 +89,6 @@ AI is the broadest category (any technique enabling machine intelligence). ML is
 
 ---
 
-**9.** Pre-training is training a model from scratch on a large, general dataset (for language models, enormous amounts of text). It's expensive and typically done by large labs. Fine-tuning takes an already pre-trained model and trains it further on a smaller, more specific dataset to adapt its behaviour for a particular task or domain. Fine-tuning is much cheaper and is what most developers and companies do to customise a model.
-
----
 
 **10.** The three standard splits are:
 - **Training set** (the 7,000 images) — what the model learns from directly
