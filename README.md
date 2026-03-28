@@ -47,7 +47,6 @@ ai-for-developers/
 ├── README.md                          ← You are here
 ├── CONTRIBUTING.md                    ← How to contribute
 ├── LICENSE                            ← MIT License
-├── TRACKER.xlsx                       ← Course content build tracker
 │
 ├── phase-1-concepts/
 │   ├── 01-terminology/
@@ -86,10 +85,7 @@ ai-for-developers/
 │   ├── 02-responsible-ai-practice/
 │   ├── 03-scaling/
 │   └── 04-risks-society/
-│
-└── assets/
-    ├── images/
-    └── diagrams/
+
 ```
 
 Each module folder follows a consistent structure:
@@ -98,7 +94,6 @@ Each module folder follows a consistent structure:
 01-llm-fundamentals/
 ├── README.md          ← Module overview and learning objectives
 ├── concepts.md        ← Core theory and explanations
-├── examples/          ← Worked examples and illustrations
 ├── code/              ← Code samples (where applicable)
 ├── quiz.md            ← Self-check questions
 └── resources.md       ← Curated external reading list
@@ -174,16 +169,7 @@ Code examples use a simple adapter pattern. Swap Claude for GPT-4 or Llama by ch
 
 This is a community course. Contributions are welcome and encouraged.
 
-You can contribute by:
 
-- **Writing content** for an unfinished module (check `TRACKER.xlsx` for status)
-- **Improving explanations** — clearer is always better
-- **Adding code examples** in the `code/` folder of any module
-- **Fixing errors** — factual, conceptual, or typographical
-- **Translating** modules into other languages
-- **Adding resources** to `resources.md` files
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR.
 
 ### Content quality bar
 
@@ -232,6 +218,6 @@ Special thanks to everyone who has filed issues, submitted PRs, and helped make 
 
 **If this course helped you, star the repository ⭐ — it helps others find it.**
 
-[Start Learning](phase-1-concepts/) · [View Tracker](TRACKER.xlsx) · [Contribute](CONTRIBUTING.md)
+[Start Learning](phase-1-concepts/) 
 
 </div>
