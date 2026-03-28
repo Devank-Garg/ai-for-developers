@@ -79,12 +79,14 @@ ai-for-developers/
 │   ├── 03-rag/
 │   ├── 04-memory/
 │   └── 05-agents/
+│   └── 06-evaluations/
 │
 ├── phase-6-responsible-ai/
-│   ├── 01-safety-alignment/
-│   ├── 02-responsible-ai-practice/
-│   ├── 03-scaling/
-│   └── 04-risks-society/
+│   ├── 01-data-confidentiality/
+│   ├── 02-safety-alignment/
+│   ├── 03-responsible-ai-practice/
+│   ├── 04-scaling/
+│   └── 05-risks-society/
 
 ```
 
